@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /people
   # GET /people.json
   def index
@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
+        format.html { redirect_to @person, notice: 'Perfil Creado Exitosamente.' }
         format.json { render :show, status: :created, location: @person }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PeopleController < ApplicationController
   def update
     respond_to do |format|
       if @person.update(person_params)
-        format.html { redirect_to @person, notice: 'Person was successfully updated.' }
+        format.html { redirect_to @person, notice: 'Perfil Editado Exitosamente.' }
         format.json { render :show, status: :ok, location: @person }
       else
         format.html { render :edit }

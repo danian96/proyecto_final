@@ -9,12 +9,17 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
+                              <% if Person.find_by(user_id: current_user.id).present? %>
+                                <strong class="font-bold"><%= Person.find_by(user_id: current_user.id).name %></strong>
+                              <% else %>
                                 <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                              <% end %>
+
+                            </span> <span class="text-muted text-xs block">Menu<b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="#">Logout</a></li>
+                        <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
                         <li>
                             <% if Person.find_by(user_id: current_user.id).present? %>
                               <%= link_to 'Perfil', edit_person_path(Person.find_by(user_id: current_user.id)) %>
