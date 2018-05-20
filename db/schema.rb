@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519233318) do
+ActiveRecord::Schema.define(version: 20180520195059) do
 
   create_table "civil_states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(version: 20180519233318) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "stock_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date "buying_date"
+    t.string "item_name"
+    t.integer "quantity"
+    t.bigint "stock_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stock_category_id"], name: "index_stocks_on_stock_category_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,4 +88,5 @@ ActiveRecord::Schema.define(version: 20180519233318) do
 
   add_foreign_key "people", "civil_states"
   add_foreign_key "people", "users"
+  add_foreign_key "stocks", "stock_categories"
 end

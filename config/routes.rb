@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stocks
+  resources :stock_categories
   resources :people
   resources :civil_states
   devise_for :users
