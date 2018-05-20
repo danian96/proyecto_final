@@ -1,5 +1,6 @@
 class CivilStatesController < ApplicationController
   before_action :set_civil_state, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /civil_states
   # GET /civil_states.json

@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Role.create([{name: 'admin'},{name: 'empleado'},{name: 'supervisor'}])
+
+if CivilState.count == 0
+  CivilState.create(name: "Soltero")
+  CivilState.create(name: "Casado")
+  CivilState.create(name: "Divorciado")
+  CivilState.create(name: "Viudo")
+  puts 'Estados Civiles Creados '
+end
