@@ -7,15 +7,15 @@
                 <table class="table table-striped table-bordered table-hover dataTables-example" >
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Last name</th>
-                      <th>Birthday</th>
-                      <th>Sex</th>
-                      <th>Ci</th>
-                      <th>Address</th>
-                      <th>Cellphone</th>
-                      <th>User</th>
-                      <th>Civil state</th>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Fecha de Nacimiento</th>
+                      <th>Sexo</th>
+                      <th>CI</th>
+                      <th>Direccion</th>
+                      <th>Telefono</th>
+                      <th>Codigo de Usuario</th>
+                      <th>Estado Civil</th>
                       <th colspan="1">Actions</th>
                     </tr>
                   </thead>
@@ -30,11 +30,11 @@
                         <td><%= person.ci %></td>
                         <td><%= person.address %></td>
                         <td><%= person.cellphone %></td>
-                        <td><%= person.user %></td>
-                        <td><%= person.civil_state %></td>
-                        <td><%= link_to 'Show', person %>
-                        <%= link_to 'Edit', edit_person_path(person) %>
-                        <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        <td><%= person.user.id %></td>
+                        <td><%= person.civil_state.name %></td>
+                        <td><%= link_to '<i class="fa fa-eye text-navy"></i>'.html_safe, person %>
+                        <%= link_to '<i class="fa fa-edit text-navy"></i>'.html_safe, edit_person_path(person) %>
+                        <%= link_to '<i class="fa fa-trash text-navy"></i>'.html_safe, person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                       </tr>
                     <% end %>
                   </tbody>
