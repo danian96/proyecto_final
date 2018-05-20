@@ -15,6 +15,14 @@
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a href="#">Logout</a></li>
+                        <li>
+                            <% if Person.find_by(user_id: current_user.id).present? %>
+                              <%= link_to 'Perfil', edit_person_path(Person.find_by(user_id: current_user.id)) %>
+                            <% else %>
+                              <%= link_to new_person_path do %> <span class="nav-label">Perfil</span>
+                              <% end %>
+                            <% end %>
+                        </li>
                     </ul>
                 </div>
                 <div class="logo-element">

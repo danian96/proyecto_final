@@ -1,0 +1,83 @@
+<%= form_with(model: person, local: true, html: {class: "form-horizontal"}) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :name, "Nombre :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :name, id: :person_name, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :last_name, "Apellido :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :last_name, id: :person_last_name, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :birthday ,"Fecha de Nacimiento :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.date_select :birthday, id: :person_birthday, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :sex , "Sexo :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.select(:sex, [['Masculino', 'Masculino'], ['Femenino', 'Femenino']], {include_blank: "Selecciona.."}, {:class=>"form-control"})%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ci , "Carnet de Identidad :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.number_field :ci, id: :person_ci, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :address ,"Direccion :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :address, id: :person_address, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cellphone , "Numero de Telefono o Celular :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.number_field :cellphone, id: :person_cellphone, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-10">
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :civil_state_id , "Estado civil :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.collection_select(:civil_state_id, CivilState.all, :id, :name, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras', people_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+<% end %>
