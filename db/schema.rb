@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521030609) do
+ActiveRecord::Schema.define(version: 20180521041048) do
+
+  create_table "assign_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "quantity"
+    t.bigint "stock_id"
+    t.bigint "assignation_stock_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignation_stock_id"], name: "index_assign_details_on_assignation_stock_id"
+    t.index ["stock_id"], name: "index_assign_details_on_stock_id"
+  end
 
   create_table "assignation_stocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date "assign_date"
@@ -94,6 +104,8 @@ ActiveRecord::Schema.define(version: 20180521030609) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "assign_details", "assignation_stocks"
+  add_foreign_key "assign_details", "stocks"
   add_foreign_key "assignation_stocks", "users"
   add_foreign_key "people", "civil_states"
   add_foreign_key "people", "users"

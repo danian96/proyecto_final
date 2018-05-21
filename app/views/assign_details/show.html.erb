@@ -1,0 +1,39 @@
+
+<br>
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Asignacion Detalle</h5>
+        </div>
+        <div class="ibox-content">
+            <p id="notice"><%= notice %></p>
+
+            <p>
+
+            <p>
+              <div class="form-group">
+              <strong>Quantity:</strong>
+              <%= @assign_detail.quantity %>
+            </div>
+            </p>
+
+            <p>
+              <div class="form-group">
+              <strong>Stock:</strong>
+              <%= @assign_detail.stock_id %>
+            </div>
+            </p>
+
+            <p>
+              <div class="form-group">
+              <strong>Assignation stock:</strong>
+              <%= @assign_detail.assignation_stock_id %>
+            </div>
+            </p>
+
+
+        <%= link_to 'Editar',  edit_assign_detail_path(@assign_detail), class:"btn btn-sm btn-white"  %>
+        <%= link_to 'Volver', assign_details_path , class:"btn btn-sm btn-white"  %>
+      </div>
+    </div>
+  </div>
