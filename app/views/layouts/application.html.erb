@@ -24,19 +24,46 @@
 
   <link rel="manifest" href="/manifest.json" />
 <meta name="apple-mobile-web-app-capable" content="yes"></head>
-  <body>
+  <% if current_user.style == "1" %>
+    <body>
 
+        <!-- Wrapper-->
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <%= render 'layouts/navigation' %>
+
+            <!-- Page wraper -->
+            <div id="page-wrapper" class="gray-bg dashbard-1">
+
+                <!-- Page wrapper -->
+                <%= render 'layouts/topnavbar' %>
+
+                <!-- Main view  -->
+                <%= yield %>
+
+                <!-- Footer -->
+                <%= render 'layouts/footer' %>
+
+            </div>
+            <!-- End page wrapper-->
+
+        </div>
+        <!-- End wrapper-->
+        <%= yield :javascript %>
+
+    </body>
+
+      <% else %>
+      <body class="top-navigation">
       <!-- Wrapper-->
       <div id="wrapper">
 
-          <!-- Navigation -->
-          <%= render 'layouts/navigation' %>
-
           <!-- Page wraper -->
-          <div id="page-wrapper" class="gray-bg">
+          <div id="page-wrapper" class="gray-bg dashbard-1">
 
               <!-- Page wrapper -->
-              <%= render 'layouts/topnavbar' %>
+              <%= render 'layouts/navigation2' %>
 
               <!-- Main view  -->
               <%= yield %>
@@ -52,4 +79,6 @@
       <%= yield :javascript %>
 
   </body>
+      <% end %>
+
 </html>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'logs/index'
+  get 'backup/index'
 
+  get 'logs/index'
+  post "/home/change_style", :as => :change_style
   resources :favorites
   resources :assign_details
   resources :assignation_stocks
