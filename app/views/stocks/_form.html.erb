@@ -1,0 +1,48 @@
+<%= form_with(model: stock, local: true, html: {class: "form-horizontal"}) do |form| %>
+  <% if stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+      <ul>
+      <% stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :buying_date ,"Fecha de Compra :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.date_select :buying_date, id: :stock_buying_date, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :item_name, "Nombre :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :item_name, id: :stock_item_name, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :quantity , "Cantidad :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.number_field :quantity, id: :stock_quantity, class: "form-control"%>
+    </div>
+  </div>
+    <div class="form-group">
+      <%= form.label :civil_state_id , "Stock Categoria :" ,class: "col-lg-2 control-label"%>
+      <div class="col-lg-10">
+          <%= form.collection_select(:stock_category_id, StockCategory.all, :id, :name, {hide_label: true}, class: "form-control") %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <div class="actions">
+          <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+          <%= link_to 'Atras', people_path , class:"btn btn-sm btn-white"%>
+        </div>
+      </div>
+    </div>
+    <% end %>

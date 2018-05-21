@@ -1,0 +1,29 @@
+<br>
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Categoria</h5>
+        </div>
+        <div class="ibox-content">
+            <p id="notice"><%= notice %></p>
+
+            <p>
+
+              <div class="form-group">
+                <strong>Assign date:</strong>
+                  <%= @assignation_stock.assign_date %>
+              </div>
+              </p>
+
+            <div class="form-group">
+              <strong>User:</strong>
+              <%= @assignation_stock.user_id %>
+            </div>
+            </p>
+
+
+        <%= link_to 'Editar',  edit_assignation_stock_path(@assignation_stock), class:"btn btn-sm btn-white"  %>
+        <%= link_to 'Volver', assignation_stocks_path , class:"btn btn-sm btn-white"  %>
+      </div>
+    </div>
+  </div>

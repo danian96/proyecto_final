@@ -1,0 +1,43 @@
+<%= form_with(model: assign_detail, local: true, html: {class: "form-horizontal"}) do |form| %>
+  <% if assign_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assign_detail.errors.count, "error") %> prohibited this assign_detail from being saved:</h2>
+
+      <ul>
+      <% assign_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :quantity , "Stock Categoria :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+    <%= form.number_field :quantity, id: :assign_detail_quantity, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :assignation_stock_id , "Stock Categoria :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.collection_select(:stock_id, Stock.all, :id, :item_name, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :assignation_stock_id , "Stock Categoria :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.collection_select(:assignation_stock_id, AssignationStock.all, :id, :assign_date, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras',assign_details_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+<% end %>
