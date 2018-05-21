@@ -5,7 +5,8 @@
 // or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
 //
-//= require jquery/jquery-3.1.1.min.js
+//= require jquery
+//= require jquery_ujs
 //= require bootstrap-sprockets
 //= require metisMenu/jquery.metisMenu.js
 //= require pace/pace.min.js
@@ -60,3 +61,4 @@
 //= require jvectormap/jquery-jvectormap-2.0.2.min.js
 //= require jvectormap/jquery-jvectormap-world-mill-en.js
 //= require toastr/toastr.min.js
+//= require serviceworker-companion
