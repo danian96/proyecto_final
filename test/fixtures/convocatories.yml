@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  stardate: 2018-05-21
+  enddate: 2018-05-21
+  vacancy: 1
+  state: MyString
+  designation: one
+
+two:
+  title: MyString
+  description: MyString
+  stardate: 2018-05-21
+  enddate: 2018-05-21
+  vacancy: 1
+  state: MyString
+  designation: two

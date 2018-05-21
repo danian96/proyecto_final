@@ -1,0 +1,72 @@
+<%= form_with(model: convocatory, local: true, html: {class: "form-horizontal"}) do |form| %>
+
+  <% if convocatory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(convocatory.errors.count, "error") %> prohibited this convocatory from being saved:</h2>
+
+      <ul>
+      <% convocatory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title, "TITULO :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :title, id: :convocatory_title, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, "DESCRIPCION :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :description, id: :convocatory_description, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :stardate, "DATO INICIO :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.date_select :stardate, id: :convocatory_stardate, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :enddate, "DATO FINAL :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.date_select :enddate, id: :convocatory_enddate, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :vacancy, "VACANCIA :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.number_field :vacancy, id: :convocatory_vacancy, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :state, "ESTADO :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :state, id: :convocatory_state, class: "form-control"%>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :designation_id , "Convocatoria :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+        <%= form.collection_select(:designation_id, Designation.all, :id, :name, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras', convocatories_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+  <% end %>

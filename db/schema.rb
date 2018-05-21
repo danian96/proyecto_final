@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521160038) do
+ActiveRecord::Schema.define(version: 20180521174113) do
+
+  create_table "appli_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "state"
+    t.date "date"
+    t.bigint "convocatory_id"
+    t.bigint "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["convocatory_id"], name: "index_appli_details_on_convocatory_id"
+    t.index ["person_id"], name: "index_appli_details_on_person_id"
+  end
 
   create_table "assign_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quantity"
@@ -34,6 +45,33 @@ ActiveRecord::Schema.define(version: 20180521160038) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "convocatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.string "description"
+    t.date "stardate"
+    t.date "enddate"
+    t.integer "vacancy"
+    t.string "state"
+    t.bigint "designation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["designation_id"], name: "index_convocatories_on_designation_id"
+  end
+
+  create_table "departaments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "designations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.bigint "departament_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["departament_id"], name: "index_designations_on_departament_id"
   end
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -150,9 +188,13 @@ ActiveRecord::Schema.define(version: 20180521160038) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "appli_details", "convocatories"
+  add_foreign_key "appli_details", "people"
   add_foreign_key "assign_details", "assignation_stocks"
   add_foreign_key "assign_details", "stocks"
   add_foreign_key "assignation_stocks", "users"
+  add_foreign_key "convocatories", "designations"
+  add_foreign_key "designations", "departaments"
   add_foreign_key "favorites", "users"
   add_foreign_key "memorandums", "memorandum_types"
   add_foreign_key "memorandums", "users"

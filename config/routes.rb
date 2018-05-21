@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :appli_details
+  resources :convocatories
+  resources :designations
+  resources :departaments
   get 'ayuda/index'
   get 'logs/index'
 
