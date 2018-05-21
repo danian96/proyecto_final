@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'ayuda/index'
   get 'logs/index'
 
   resources :favorites
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :user_trainings
   resources :trainings
   resources :memorandum_types
+
   resources :user_trainings
   resources :trainings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
