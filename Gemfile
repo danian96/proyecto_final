@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
-
+gem 'logstasher'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem "font-awesome-rails"
 gem 'jquery-rails'
