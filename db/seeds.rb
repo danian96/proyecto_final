@@ -1,17 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-Role.create([{name: 'admin'},{name: 'empleado'},{name: 'supervisor'}])
-
-if CivilState.count == 0
-  CivilState.create(name: "Soltero")
-  CivilState.create(name: "Casado")
-  CivilState.create(name: "Divorciado")
-  CivilState.create(name: "Viudo")
-  puts 'Estados Civiles Creados '
-end
+User.create!([
+  {email: "prueba@gmail.com", encrypted_password: "$2a$11$tcyaV3q3q0amahUAQ3fK8uZQz3S8F6wbL5gfdS17uAcBbcf8HRJj.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-05-21 18:08:53", last_sign_in_at: "2018-05-21 15:08:45", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", style: "1"}
+])
+UserTraining.create!([
+  {state: "asdfasdfasdf", training_id: 1, user_id: 1}
+])
+Training.create!([
+  {title: "asdf", description: "asdf", init_date: "2018-05-21", finish_date: "2018-05-21"}
+])

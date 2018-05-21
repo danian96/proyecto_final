@@ -25,6 +25,7 @@ gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'logstasher'
+gem 'seed_dump'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

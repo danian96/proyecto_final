@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180521174113) do
 
   create_table "appli_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -22,6 +23,9 @@ ActiveRecord::Schema.define(version: 20180521174113) do
     t.index ["convocatory_id"], name: "index_appli_details_on_convocatory_id"
     t.index ["person_id"], name: "index_appli_details_on_person_id"
   end
+=======
+ActiveRecord::Schema.define(version: 20180521160038) do
+>>>>>>> 1228df32813f863c3c8172e4316a2bd964a49f69
 
   create_table "assign_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quantity"
@@ -175,6 +179,7 @@ ActiveRecord::Schema.define(version: 20180521174113) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "style"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

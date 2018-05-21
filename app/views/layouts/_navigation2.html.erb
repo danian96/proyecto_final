@@ -1,0 +1,119 @@
+<div class="row border-bottom white-bg">
+        <nav class="navbar navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <i class="fa fa-reorder"></i>
+                </button>
+                <a href="#" class="navbar-brand">HRM IN+</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a aria-expanded="false" role="button" href="layouts.html"> Dashboard</a>
+                    </li>
+                    <li class="active">
+                      <% if Person.find_by(user_id: current_user.id).present? %>
+                        <%= link_to 'Perfil', edit_person_path(Person.find_by(user_id: current_user.id)) %>
+                      <% else %>
+                        <%= link_to new_person_path do %> <span class="nav-label">Perfil</span>
+                        <% end %>
+                      <% end %>
+                    </li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Usuario <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="">Menu item</a></li>
+                            <li><a href="">Menu item</a></li>
+                            <li><a href="">Menu item</a></li>
+                            <li><a href="">Menu item</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Roles Y Permisos <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="">Menu item</a></li>
+                            <li><a href="">Menu item</a></li>
+                            <li><a href="">Menu item</a></li>
+                            <li><a href="">Menu item</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Prestamo Materiales <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li><%=link_to 'Stock Categoria', stock_categories_path %></li>
+                          <li><%=link_to 'Stock', stocks_path%></li>
+                          <li><%= link_to 'Asignacion Stock', assignation_stocks_path  %></li>
+                          <li><%= link_to 'Asignacion Detalle', assign_details_path  %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Gestion de Capacitaciones <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li><%= link_to 'Training', trainings_path %></li>
+                          <li><%= link_to 'User Training', user_trainings_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Bitacora <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li><%= link_to 'Bitacora', logs_index_path %></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Backup y Restore <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li><%= link_to 'Training', trainings_path %></li>
+                          <li><%= link_to 'User Training', user_trainings_path %></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-top-links navbar-right">
+                  <li>
+                      <%= link_to "Log out", destroy_user_session_path, :method => :get, class:"fa fa-sign-out" %>
+                  </li>
+                    <li>
+                        <%= link_to 'Cambiar Estilo',change_style_path, :method=> :post , class:"fa fa-cogs"%>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-star"></i>  <span class="label label-primary"><%= current_user.favorite.count%></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                    <div>
+                                         Mis Favoritos
+                                        <span class="pull-right text-muted small"></span>
+                                    </div>
+                            </li>
+
+                            <li class="divider">
+                            </li>
+                                <% current_user.favorite.each do |fav| %>
+                                <li>
+                                    <div>
+
+                                        <i class="fa fa-star fa-fw"></i>
+                                        <%= link_to fav.name , send(fav.acctionlink) %>
+                                    </div>
+
+                                </li>
+                                <li class="divider">
+                                <% end %>
+                              </li>
+                            <li>
+                                <div class="text-center link-block">
+                                  <%= link_to 'Mostrar Favoritos',favorites_path %>
+                                  <i class="fa fa-angle-right"></i>
+                                </div>
+                            </li
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
