@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :favorites
+  resources :assign_details
+  resources :assignation_stocks
   resources :memorandums
   resources :user_trainings
   resources :trainings
@@ -19,4 +22,7 @@ Rails.application.routes.draw do
       root to: 'home#home', as: :unauthenticated_root
     end
   end
+
+  resources :stocks
+  resources :stock_categories
 end
