@@ -1,0 +1,55 @@
+<%= form_with(model: training, local: true, html:{class: "form-horizontal"}) do |form| %>
+  <% if training.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(training.errors.count, "error") %> prohibited this training from being saved:</h2>
+
+      <ul>
+      <% training.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title, "Titulo :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :title, id: :training_title, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, "Descripcion :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :description, id: :training_description , class: "form-control"%>
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <%= form.label :init_date ,"Fecha de Inicio :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.date_select :init_date, id: :training_init_date, class: "form-control"%>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :finish_date ,"Fecha final :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.date_select :finish_date, id: :training_finish_date, class: "form-control"%>
+    </div>
+  </div>
+
+
+
+ <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras', training_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519233318) do
+ActiveRecord::Schema.define(version: 20180521053109) do
 
   create_table "civil_states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -45,6 +45,25 @@ ActiveRecord::Schema.define(version: 20180519233318) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "trainings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.string "description"
+    t.date "init_date"
+    t.date "finish_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_trainings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "state"
+    t.bigint "training_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_user_trainings_on_training_id"
+    t.index ["user_id"], name: "index_user_trainings_on_user_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,4 +91,6 @@ ActiveRecord::Schema.define(version: 20180519233318) do
 
   add_foreign_key "people", "civil_states"
   add_foreign_key "people", "users"
+  add_foreign_key "user_trainings", "trainings"
+  add_foreign_key "user_trainings", "users"
 end
