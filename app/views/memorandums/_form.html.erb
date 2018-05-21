@@ -1,0 +1,57 @@
+<%= form_with(model: memorandum, local: true, html: {class: "form-horizontal"}) do |form| %>
+
+  <% if memorandum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(memorandum.errors.count, "error") %> prohibited this memorandum from being saved:</h2>
+
+      <ul>
+      <% memorandum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title, "titulo :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :title, id: :memorandum_title, class: "form-control"%>
+    </div>
+  </div>
+
+<div class="form-group">
+  <%= form.label :description, "descripcion :",class: "col-lg-2 control-label"%>
+  <div class="col-lg-10">
+    <%= form.text_field :description, id: :memorandum_description,class: "form-control"%>
+  </div>
+</div>
+
+
+
+
+  <div class="form-group">
+    <%= form.label :memorandum_type_id , "tipo de memorandums:" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.collection_select(:memorandum_type_id, MemorandumType.all, :id, :name, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :user_id , "usuario :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.collection_select(:user_id, User.all, :id, :email, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras', memorandums_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>
