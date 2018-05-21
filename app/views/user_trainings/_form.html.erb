@@ -1,0 +1,32 @@
+<%= form_with(model: user_training, local: true) do |form| %>
+  <% if user_training.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_training.errors.count, "error") %> prohibited this user_training from being saved:</h2>
+
+      <ul>
+      <% user_training.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :user_training_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :training_id %>
+    <%= form.text_field :training_id, id: :user_training_training_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :user_training_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

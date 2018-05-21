@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>State:</strong>
+  <%= @user_training.state %>
+</p>
+
+<p>
+  <strong>Training:</strong>
+  <%= @user_training.training %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_training.user %>
+</p>
+
+<%= link_to 'Edit', edit_user_training_path(@user_training) %> |
+<%= link_to 'Back', user_trainings_path %>

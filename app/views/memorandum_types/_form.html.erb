@@ -1,0 +1,30 @@
+<%= form_with(model: memorandum_type, local: true, html: {class: "form-horizontal"}) do |form| %>
+
+  <% if memorandum_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(memorandum_type.errors.count, "error") %> prohibited this memorandum_type from being saved:</h2>
+
+      <ul>
+      <% memorandum_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name ,"Name :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :name, id: :memorandum_type_name, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras', memorandum_types_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+<% end %>
