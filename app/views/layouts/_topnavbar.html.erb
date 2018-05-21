@@ -8,11 +8,49 @@
                 </div>
             </form>
         </div>
-        
+
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+                <%= link_to "Log out", destroy_user_session_path, :method => :delete, class:"fa fa-sign-out" %>
             </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                    <i class="fa fa-star"></i>  <span class="label label-primary"><%= current_user.favorite.count%></span>
+                </a>
+                <ul class="dropdown-menu dropdown-alerts">
+                    <li>
+                        <a href="">
+                            <div>
+                                 Mis Favoritos
+                                <span class="pull-right text-muted small"></span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="divider">
+                    </li>
+                        <% current_user.favorite.each do |fav| %>
+                        <li>
+                            <div>
+
+                                <i class="fa fa-star fa-fw"></i>
+                                <%= link_to fav.name , send(fav.acctionlink) %>
+                            </div>
+
+                        </li>
+                        <li class="divider">
+                        <% end %>
+                      </li>
+                    <li>
+                        <div class="text-center link-block">
+                          <%= link_to 'Mostrar Favoritos',favorites_path %>
+                          <i class="fa fa-angle-right"></i>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
         </ul>
     </nav>
 </div>
