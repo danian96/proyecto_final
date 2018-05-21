@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :favorites
+  resources :assign_details
+  resources :assignation_stocks
+  resources :memorandums
+  resources :user_trainings
+  resources :trainings
+  resources :memorandum_types
   resources :user_trainings
   resources :trainings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -17,4 +24,7 @@ Rails.application.routes.draw do
       root to: 'home#home', as: :unauthenticated_root
     end
   end
+
+  resources :stocks
+  resources :stock_categories
 end

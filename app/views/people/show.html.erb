@@ -47,8 +47,8 @@
             <%= @person.civil_state.name %>
           </p>
 
-          <%= link_to 'Edit', edit_person_path(@person) %> |
-          <%= link_to 'Back', people_path %>
+          <%= link_to 'Editar', edit_person_path(@person) , class:"btn btn-sm btn-white"%>
+          <%= link_to 'Atras', authenticated_root_path , class:"btn btn-sm btn-white"%>
         </div>
     </div>
 </div>

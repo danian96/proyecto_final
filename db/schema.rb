@@ -18,6 +18,32 @@ ActiveRecord::Schema.define(version: 20180521053109) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "acctionlink"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "memorandum_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memorandums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "memorandum_type_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["memorandum_type_id"], name: "index_memorandums_on_memorandum_type_id"
+    t.index ["user_id"], name: "index_memorandums_on_user_id"
+  end
+
   create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "last_name"
@@ -45,11 +71,34 @@ ActiveRecord::Schema.define(version: 20180521053109) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "stock_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date "buying_date"
+    t.string "item_name"
+    t.integer "quantity"
+    t.bigint "stock_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stock_category_id"], name: "index_stocks_on_stock_category_id"
+  end
+
+>>>>>>> 4a1e0d37a451c24b3a9fa61196d49334f9f8e03e
   create_table "trainings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.string "description"
     t.date "init_date"
+<<<<<<< HEAD
     t.date "finish_date"
+=======
+    t.date "finish_day"
+>>>>>>> 4a1e0d37a451c24b3a9fa61196d49334f9f8e03e
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -89,8 +138,18 @@ ActiveRecord::Schema.define(version: 20180521053109) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "assign_details", "assignation_stocks"
+  add_foreign_key "assign_details", "stocks"
+  add_foreign_key "assignation_stocks", "users"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "memorandums", "memorandum_types"
+  add_foreign_key "memorandums", "users"
   add_foreign_key "people", "civil_states"
   add_foreign_key "people", "users"
+<<<<<<< HEAD
+=======
+  add_foreign_key "stocks", "stock_categories"
+>>>>>>> 4a1e0d37a451c24b3a9fa61196d49334f9f8e03e
   add_foreign_key "user_trainings", "trainings"
   add_foreign_key "user_trainings", "users"
 end

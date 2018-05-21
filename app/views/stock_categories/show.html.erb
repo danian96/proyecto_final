@@ -1,0 +1,22 @@
+<br>
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Categoria</h5>
+        </div>
+        <div class="ibox-content">
+            <p id="notice"><%= notice %></p>
+
+            <p>
+            <div class="form-group">
+              <strong>Nombre:</strong>
+              <%= @stock_category.name %>
+            </div>
+            </p>
+            
+
+        <%= link_to 'Editar', edit_stock_category_path(@stock_category), class:"btn btn-sm btn-white"  %>
+        <%= link_to 'Volver', stock_categories_path, class:"btn btn-sm btn-white"  %>
+      </div>
+    </div>
+  </div>

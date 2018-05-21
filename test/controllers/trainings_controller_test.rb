@@ -34,7 +34,11 @@ class TrainingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update training" do
+<<<<<<< HEAD
     patch training_url(@training), params: { training: { description: @training.description, finish_date: @training.finish_date, init_date: @training.init_date, title: @training.title } }
+=======
+    patch training_url(@training), params: { training: { description: @training.description, finish_day: @training.finish_day, init_date: @training.init_date, title: @training.title } }
+>>>>>>> 4a1e0d37a451c24b3a9fa61196d49334f9f8e03e
     assert_redirected_to training_url(@training)
   end
 

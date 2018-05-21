@@ -1,0 +1,42 @@
+<%= form_with(model: favorite, local: true, html: {class: "form-horizontal"}) do |form| %>
+  <% if favorite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(favorite.errors.count, "error") %> prohibited this favorite from being saved:</h2>
+
+      <ul>
+      <% favorite.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, "Nombre :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :name, id: :favorite_name, class: "form-control"%>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.label :acctionlink, "Accion link :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :acctionlink, id: :favorite_acctionlink, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :user_id, "User :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :user_id, id: :favorite_user_id, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras',favorites_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+<% end %>
