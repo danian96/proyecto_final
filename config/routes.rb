@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'backup/index'
+  get 'ayuda/index'
+  get 'logs/index'
 
   get 'logs/index'
   post "/home/change_style", :as => :change_style
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   resources :user_trainings
   resources :trainings
   resources :memorandum_types
+
   resources :user_trainings
   resources :trainings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -31,4 +33,5 @@ Rails.application.routes.draw do
 
   resources :stocks
   resources :stock_categories
+  get 'backup/index'
 end
