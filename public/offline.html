@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Sistema de Recursos Humanos</title>
+
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Animation CSS -->
+      <link href="css/animate.css" rel="stylesheet">
+      <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet">
+
+  </head>
+<body id="page-top" class="landing-page no-skin-config">
+  <div class="navbar-wrapper">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+              <div class="navbar-header page-scroll">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a class="page-scroll" href="#page-top">Inicio</a></li>
+                      <li><a class="page-scroll" href="#features">Caracteristicas</a></li>
+                      <li><a class="page-scroll" href="#testimonials">Testimonios</a></li>
+                      <li><a class="page-scroll" href="#pricing">Precio</a></li>
+                      <li><a class="page-scroll" href="#contact">Contactanos</a></li>
+                      <li><%= link_to('Login', new_user_session_path)  %>  </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+  <div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+  <ol class="carousel-indicators">
+      <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+      <li data-target="#inSlider" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+      <div class="item active">
+          <div class="container">
+              <div class="carousel-caption">
+                  <h1>El mejor software<br/>
+                      de recursos humanos<br/>
+                      en el mercado<br/>
+                      somos IN+ developers</h1>
+                  <p>Una opcion completa para su emprendimiento.</p>
+                  <p>
+                      <a class="btn btn-lg btn-primary" href="#" role="button">Aprende sobre</a>
+                      <a class="caption-link" href="#" role="button">IN+ Developers</a>
+                  </p>
+              </div>
+              <div class="carousel-image wow zoomIn">
+                  <img src="<%= image_path('landing/laptop.png') %>" alt="laptop"/>
+              </div>
+          </div>
+          <!-- Set background for slide in css -->
+          <div class="header-back one"></div>
+
+      </div>
+      <div class="item">
+          <div class="container">
+              <div class="carousel-caption blank">
+                  <h1>Construimos interfaces <br/> que inspiren.</h1>
+                  <p>Algo con lo que te sentiras identificado.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Aprende sobre</a></p>
+              </div>
+          </div>
+          <!-- Set background for slide in css -->
+          <div class="header-back two"></div>
+      </div>
+  </div>
+  <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+  </a>
+  </div>
+
+
+  <section id="features" class="container services">
+  <div class="row">
+      <div class="col-sm-3">
+          <h2>Completamente Responsivo</h2>
+          <p>Nuestro software es completamente responsivo y ademas completamente adaptable al uso movil.</p>
+          <p><a class="navy-link" href="#" role="button">Detalles &raquo;</a></p>
+      </div>
+      <div class="col-sm-3">
+          <h2>LESS/SASS Files</h2>
+          <p>Usamos la ultima tecnologia SCSS, LESS, y SASS para una mejor interfaz.</p>
+          <p><a class="navy-link" href="#" role="button">Detalles &raquo;</a></p>
+      </div>
+      <div class="col-sm-3">
+          <h2>Los mejores Reportes</h2>
+          <p>Ten el completo control de tus empleados en la palma de tu mano sin muchas complicaciones.</p>
+          <p><a class="navy-link" href="#" role="button">Detalles &raquo;</a></p>
+      </div>
+      <div class="col-sm-3">
+          <h2>Facilidad de uso</h2>
+          <p>Nos enfocamos en prestar la mayor comodidad y ademas el mas facil acceso para su persona.</p>
+          <p><a class="navy-link" href="#" role="button">Detalles &raquo;</a></p>
+      </div>
+  </div>
+  </section>
+
+  <section class="container features">
+  <div class="row">
+      <div class="col-lg-12 text-center">
+          <div class="navy-line"></div>
+          <h1>Lo mejor con la mejor<br/> <span class="navy"> comodidad y excelencia</span> </h1>
+          <p>No te desesperes mas, encuentra tu tranquilidad aqui. </p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3 text-center wow fadeInLeft">
+          <div>
+              <i class="fa fa-mobile features-icon"></i>
+              <h2>Completamente Responsivo</h2>
+              <p>Nuestro software es completamente responsivo y ademas completamente adaptable al uso movil.</p>
+          </div>
+          <div class="m-t-lg">
+              <i class="fa fa-bar-chart features-icon"></i>
+              <h2>Los mejores Reportes</h2>
+              <p>Ten el completo control de tus empleados en la palma de tu mano sin muchas complicaciones.</p>
+          </div>
+      </div>
+      <div class="col-md-6 text-center  wow zoomIn">
+          <img src="<%= image_path('landing/perspective.png') %>" alt="dashboard" class="img-responsive">
+      </div>
+      <div class="col-md-3 text-center wow fadeInRight">
+          <div>
+              <i class="fa fa-envelope features-icon"></i>
+              <h2>Facilidad de uso</h2>
+              <p>Nos enfocamos en prestar la mayor comodidad y ademas el mas facil acceso para su persona.</p>
+          </div>
+          <div class="m-t-lg">
+              <i class="fa fa-google features-icon"></i>
+              <h2>LESS/SASS Files</h2>
+              <p>Usamos la ultima tecnologia SCSS, LESS, y SASS para una mejor interfaz.</p>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-12 text-center">
+          <div class="navy-line"></div>
+          <h1>Descubre funcionalidades increibles</h1>
+          <p>Funcionalidades listas para que puedas lograr la mejor administracion de recursos humanos. </p>
+      </div>
+  </div>
+  <div class="row features-block">
+      <div class="col-lg-6 features-text wow fadeInLeft">
+          <small>IN+ Developers</small>
+          <h2>Un sistema disenado perfectamente </h2>
+          <p>IN+ le ayudara a tener el completo control y ademas las mejores herramientas para poder hacer todo de manera mas sencilla y optima.</p>
+          <a href="" class="btn btn-primary">Learn more</a>
+      </div>
+      <div class="col-lg-6 text-right wow fadeInRight">
+          <img src="<%= image_path('landing/dashboard.png') %>" alt="dashboard" class="img-responsive pull-right">
+      </div>
+  </div>
+  </section>
+
+  <section class="features">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <div class="navy-line"></div>
+              <h1>Even more great feautres</h1>
+              <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>
+          </div>
+      </div>
+      <div class="row features-block">
+          <div class="col-lg-3 features-text wow fadeInLeft">
+              <small>INSPINIA</small>
+              <h2>Perfectly designed </h2>
+              <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
+              <a href="" class="btn btn-primary">Learn more</a>
+          </div>
+          <div class="col-lg-6 text-right m-t-n-lg wow zoomIn">
+              <img src="<%= image_path('landing/iphone.jpg') %>" class="img-responsive" alt="dashboard">
+          </div>
+          <div class="col-lg-3 features-text text-right wow fadeInRight">
+              <small>INSPINIA</small>
+              <h2>Perfectly designed </h2>
+              <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
+              <a href="" class="btn btn-primary">Learn more</a>
+          </div>
+      </div>
+  </div>
+
+  </section>
+
+  <section id="testimonials" class="navy-section testimonials" style="margin-top: 0">
+
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center wow zoomIn">
+              <i class="fa fa-comment big-icon"></i>
+              <h1>
+                  Que dicen nuestros usuarios
+              </h1>
+              <div class="testimonials-text">
+                  <i>"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."</i>
+              </div>
+              <small>
+                  <strong>12.02.2014 - Usuario Anonimo</strong>
+              </small>
+          </div>
+      </div>
+  </div>
+
+  </section>
+
+  <section id="pricing" class="pricing">
+  <div class="container">
+      <div class="row m-b-lg">
+          <div class="col-lg-12 text-center">
+              <div class="navy-line"></div>
+              <h1>Precio de nuestro sistema</h1>
+              <p>Precio justo para una increible comodidad a la hora de administrar tus Recursos Humanos.</p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-4 wow zoomIn">
+              <ul class="pricing-plan list-unstyled">
+                  <li class="pricing-title">
+                      Basico
+                  </li>
+                  <li class="pricing-desc">
+                      Para pequenos negocios y empresas Start up.
+                  </li>
+                  <li class="pricing-price">
+                      <span>$16</span> / mes
+                  </li>
+                  <li>
+                      Dashboards
+                  </li>
+                  <li>
+                      Projects view
+                  </li>
+                  <li>
+                      Contacts
+                  </li>
+                  <li>
+                      Calendar
+                  </li>
+                  <li>
+                      Ruby on Rails
+                  </li>
+                  <li>
+                      <a class="btn btn-primary btn-xs" href="#">Consiguelo</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="col-lg-4 wow zoomIn">
+              <ul class="pricing-plan list-unstyled selected">
+                  <li class="pricing-title">
+                      Estandar
+                  </li>
+                  <li class="pricing-desc">
+                      Lo necesario para que una PyMe pueda andar sobre ruedas.
+                  </li>
+                  <li class="pricing-price">
+                      <span>$22</span> / mes
+                  </li>
+                  <li>
+                      Dashboards
+                  </li>
+                  <li>
+                      Projects view
+                  </li>
+                  <li>
+                      Contacts
+                  </li>
+                  <li>
+                      Calendar
+                  </li>
+                  <li>
+                      Ruby on Rails
+                  </li>
+                  <li>
+                      <strong>Support platform</strong>
+                  </li>
+                  <li class="plan-action">
+                      <a class="btn btn-primary btn-xs" href="#">Consiguelo</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="col-lg-4 wow zoomIn">
+              <ul class="pricing-plan list-unstyled">
+                  <li class="pricing-title">
+                      Premium
+                  </li>
+                  <li class="pricing-desc">
+                      Para empresas mas grandes.
+                  </li>
+                  <li class="pricing-price">
+                      <span>$160</span> / month
+                  </li>
+                  <li>
+                      Dashboards
+                  </li>
+                  <li>
+                      Projects view
+                  </li>
+                  <li>
+                      Contacts
+                  </li>
+                  <li>
+                      Calendar
+                  </li>
+                  <li>
+                      Ruby on Rails
+                  </li>
+                  <li>
+                      <a class="btn btn-primary btn-xs" href="#">Consiguelo</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="row m-t-lg">
+          <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg">
+              <p>*Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. <span class="navy">Various versions</span>  have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+          </div>
+      </div>
+  </div>
+
+  </section>
+
+  <section id="contact" class="gray-section contact">
+  <div class="container">
+      <div class="row m-b-lg">
+          <div class="col-lg-12 text-center">
+              <div class="navy-line"></div>
+              <h1>Contactanos</h1>
+              <p>Dejanos asesorarte sobre tu negocio o empresa.</p>
+          </div>
+      </div>
+      <div class="row m-b-lg">
+          <div class="col-lg-3 col-lg-offset-3">
+              <address>
+                  <strong><span class="navy">IN+ Developers, Inc.</span></strong><br/>
+                  795 Folsom Ave, Suite 600<br/>
+                  San Francisco, CA 94107<br/>
+                  <abbr title="Phone">P:</abbr> (123) 456-7890
+              </address>
+          </div>
+          <div class="col-lg-4">
+              <p class="text-color">
+                  Un proyecto realizado para la materia de Sistemas de Informacion II en la FICCT - UAGRM
+              </p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <a href="mailto:test@email.com" class="btn btn-primary">Envianos un e-mail</a>
+              <p class="m-t-sm">
+                  O siguenos en nuestras redes sociales para mas informacion
+              </p>
+              <ul class="list-inline social-icon">
+                  <li><a href="#"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+              <p><strong>&copy; 2018 Sistemas de Informacion II</strong><br/> Un proyecto realizado para la materia de Sistemas de Informacion II en la FICCT - UAGRM.</p>
+          </div>
+      </div>
+  </div>
+  </section>
+  <!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script src="js/plugins/wow/wow.min.js"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 80
+        });
+
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function(event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+            $("#navbar").collapse('hide');
+        });
+    });
+
+    var cbpAnimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+    // Activate WOW.js plugin for animation on scrol
+    new WOW().init();
+
+</script>
+
+</body>
+</html>
