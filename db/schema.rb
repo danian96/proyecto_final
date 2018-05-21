@@ -10,25 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521061500) do
-
-  create_table "assign_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "quantity"
-    t.bigint "stock_id"
-    t.bigint "assignation_stock_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["assignation_stock_id"], name: "index_assign_details_on_assignation_stock_id"
-    t.index ["stock_id"], name: "index_assign_details_on_stock_id"
-  end
-
-  create_table "assignation_stocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date "assign_date"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_assignation_stocks_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 20180521053109) do
 
   create_table "civil_states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -89,6 +71,8 @@ ActiveRecord::Schema.define(version: 20180521061500) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+<<<<<<< HEAD
+=======
   create_table "stock_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -105,11 +89,16 @@ ActiveRecord::Schema.define(version: 20180521061500) do
     t.index ["stock_category_id"], name: "index_stocks_on_stock_category_id"
   end
 
+>>>>>>> 4a1e0d37a451c24b3a9fa61196d49334f9f8e03e
   create_table "trainings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.string "description"
     t.date "init_date"
+<<<<<<< HEAD
+    t.date "finish_date"
+=======
     t.date "finish_day"
+>>>>>>> 4a1e0d37a451c24b3a9fa61196d49334f9f8e03e
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -157,7 +146,10 @@ ActiveRecord::Schema.define(version: 20180521061500) do
   add_foreign_key "memorandums", "users"
   add_foreign_key "people", "civil_states"
   add_foreign_key "people", "users"
+<<<<<<< HEAD
+=======
   add_foreign_key "stocks", "stock_categories"
+>>>>>>> 4a1e0d37a451c24b3a9fa61196d49334f9f8e03e
   add_foreign_key "user_trainings", "trainings"
   add_foreign_key "user_trainings", "users"
 end

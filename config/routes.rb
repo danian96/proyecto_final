@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :user_trainings
   resources :trainings
   resources :memorandum_types
+  resources :user_trainings
+  resources :trainings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, only: [:session, :registration], path: 'session',
              path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
