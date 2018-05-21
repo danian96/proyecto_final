@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @memorandum.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @memorandum.description %>
+</p>
+
+<p>
+  <strong>Memorandum type:</strong>
+  <%= @memorandum.memorandum_type_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @memorandum.user_id %>
+</p>
+<div class="form-group">
+  <div class="col-lg-offset-2 col-lg-10">
+    <div class="actions">
+<%= link_to 'Editar', edit_memorandum_path(@memorandum),class:"btn btn-sm btn-white" %>
+<%= link_to 'Atras', memorandums_path,class:"btn btn-sm btn-white" %>
+</div>
+</div>
+</div>
