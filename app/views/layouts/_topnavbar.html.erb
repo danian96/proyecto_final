@@ -17,12 +17,20 @@
             <li>
                 <%= link_to "Log out", destroy_user_session_path, :method => :get, class:"fa fa-sign-out" %>
             </li>
+            <!--------------------------------------------------------------------------->
             <li>
-              <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                  <i class="fa fa-question-circle"></i></span>
-              </a>
+
+
+              <div class="text-center link-block">
+                <%= link_to '<i class="fa fa-question-circle"></i>'.html_safe,ayuda_index_path %>
+
+              </div>
+
+
 
             </li>
+
+            <!--------------------------------------------------------------------------->
 
             <li class="dropdown">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -61,6 +69,7 @@
 
                 </ul>
             </li>
+            <!--------------------------------------------------------------------------->
 
         </ul>
     </nav>
