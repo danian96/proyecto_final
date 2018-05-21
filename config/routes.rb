@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'logs/index'
+
   resources :favorites
   resources :assign_details
   resources :assignation_stocks
