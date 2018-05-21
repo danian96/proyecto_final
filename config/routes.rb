@@ -33,5 +33,5 @@ Rails.application.routes.draw do
 
   resources :stocks
   resources :stock_categories
-  get 'backup/index'
+  post 'backup/index', :as => :backup_index
 end

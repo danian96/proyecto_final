@@ -65,8 +65,7 @@
                     <li class="dropdown">
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Backup y Restore <span class="caret"></span></a>
                         <ul role="menu" class="dropdown-menu">
-                          <li><%= link_to 'Training', trainings_path %></li>
-                          <li><%= link_to 'User Training', user_trainings_path %></li>
+                          <li><%= link_to 'Descargar Archivo de Backup',backup_index_path, :method=> :post , class:"fa fa-cloud-download"%></li>
                         </ul>
                     </li>
 
@@ -74,6 +73,12 @@
                 <ul class="nav navbar-top-links navbar-right">
                   <li>
                       <%= link_to "Log out", destroy_user_session_path, :method => :get, class:"fa fa-sign-out" %>
+                  </li>
+                  <li>
+                    <div class="text-center link-block">
+                      <%= link_to '<i class="fa fa-question-circle"></i>'.html_safe,ayuda_index_path %>
+
+                    </div>
                   </li>
                     <li>
                         <%= link_to 'Cambiar Estilo',change_style_path, :method=> :post , class:"fa fa-cogs"%>

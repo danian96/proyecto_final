@@ -81,11 +81,9 @@
                   </li>
 
               <li >
-                  <a href="#"><i class="fa fa-database"></i> <span class="nav-label">Bakup y Restore</span><span class="fa arrow"></span></a>
+                  <a href="#"><i class="fa fa-database"></i> <span class="nav-label">Backup y Restore</span><span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level collapse">
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
+                      <li><%= link_to 'Descargar Archivo de Backup',backup_index_path, :method=> :post , class:"fa fa-cloud-download"%></li>
                   </ul>
                 </li>
             </li>
