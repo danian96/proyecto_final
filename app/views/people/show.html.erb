@@ -17,38 +17,8 @@
             <%= @person.last_name %>
           </p>
 
-          <p>
-            <strong>Fecha de Nacimiento :</strong>
-            <%= @person.birthday %>
-          </p>
-
-          <p>
-            <strong>Sexo :</strong>
-            <%= @person.sex %>
-          </p>
-
-          <p>
-            <strong>CI:</strong>
-            <%= @person.ci %>
-          </p>
-
-          <p>
-            <strong>Direccion :</strong>
-            <%= @person.address %>
-          </p>
-
-          <p>
-            <strong>Numero de telefono o celular :</strong>
-            <%= @person.cellphone %>
-          </p>
-
-          <p>
-            <strong>Estado Civil :</strong>
-            <%= @person.civil_state.name %>
-          </p>
-
           <%= link_to 'Edit', edit_person_path(@person) %> |
-          <%= link_to 'Back', root_path %>
+          <%= link_to 'Back', auto_path %>
         </div>
     </div>
 </div>

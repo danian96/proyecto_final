@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  memorandum_type: one
+  user: one
+
+two:
+  title: MyString
+  description: MyString
+  memorandum_type: two
+  user: two
