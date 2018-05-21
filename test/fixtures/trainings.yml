@@ -3,11 +3,11 @@
 one:
   title: MyString
   description: MyString
-  init_date: 2018-05-20
-  finish_day: 2018-05-20
+  init_date: 2018-05-21
+  finish_date: 2018-05-21
 
 two:
   title: MyString
   description: MyString
-  init_date: 2018-05-20
-  finish_day: 2018-05-20
+  init_date: 2018-05-21
+  finish_date: 2018-05-21

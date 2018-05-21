@@ -1,0 +1,33 @@
+<div class="row">
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Logs del Sistema / Bitacora</h5>
+          </div>
+            <div class="ibox-content">
+
+  <%= link_to 'Start', 'javascript:void("start")', :id => :start, :style => 'display:none' %>
+  <pre id='logs'>
+    <%= @lines.join("\n") %>
+  </pre>
+</div>
+</div>
+</div>
+</div>
+  <script>
+    jq(function(){
+      var start = jq('#start');
+      var stop = jq('#stop');
+      var milliseconds = 1024;
+      var id = null;
+      var update = function(){
+        id = setInterval(function(){
+          var lines = App.ajax('logs?silence=logger');
+          jq('#logs').html(lines.join("\n"));
+        }, milliseconds);
+      };
+      start.click(function(){ start.toggle(); stop.toggle(); update(); });
+      stop.click(function(){ stop.toggle(); start.toggle(); clearInterval(id); });
+      update();
+    });
+  </script>

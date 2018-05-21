@@ -11,6 +11,7 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -51,4 +52,32 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+
+    # Enable the logstasher logs for the current environment
+  config.logstasher.enabled = true
+
+  # Enable logging of controller params
+  config.logstasher.log_controller_parameters = true
+  # Each of the following lines are optional. If you want to selectively disable log subscribers.
+  config.logstasher.controller_enabled = false
+  config.logstasher.mailer_enabled = false
+  config.logstasher.record_enabled = false
+  config.logstasher.view_enabled = false
+  config.logstasher.job_enabled = false
+
+  # # This line is optional if you do not want to suppress app logs in your <environment>.log
+  # config.logstasher.suppress_app_log = false
+
+
+  # # This line is optional if you do not want to log the backtrace of exceptions
+  # config.logstasher.backtrace = false
+
+  # # This line is optional, defaults to log/logstasher_<environment>.log
+  # config.logstasher.logger_path = 'log/logstasher.log'
+
+  # This line is optional, loaded only if the value is truthy
+  # config.logstasher.field_renaming = {
+  #     old_field_name => new_field_name,
+  # }
 end

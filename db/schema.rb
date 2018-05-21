@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20180521061500) do
     t.string "title"
     t.string "description"
     t.date "init_date"
-    t.date "finish_day"
+    t.date "finish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

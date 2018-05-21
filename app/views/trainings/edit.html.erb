@@ -1,6 +1,12 @@
-<h1>Editing Training</h1>
 
-<%= render 'form', training: @training %>
-
-<%= link_to 'Show', @training %> |
-<%= link_to 'Back', trainings_path %>
+<br>
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Nuevo Entrenamiento</h5>
+        </div>
+        <div class="ibox-content">
+          <%= render 'form', training: @training %>
+        </div>
+    </div>
+</div>
