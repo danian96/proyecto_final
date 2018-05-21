@@ -1,0 +1,38 @@
+<%= form_with(model: assignation_stock, local: true, html: {class: "form-horizontal"}) do |form| %>
+  <% if assignation_stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignation_stock.errors.count, "error") %> prohibited this assignation_stock from being saved:</h2>
+
+      <ul>
+      <% assignation_stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :assign_date, "Asignacion Stock :" ,class: "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+    <%= form.date_select :assign_date, id: :assignation_stock_assign_date %>
+  </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <%= form.label :user_id , "Stock Categoria :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.collection_select(:user_id, User.all, :id, :email, {hide_label: false}, class: "form-control") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras',assignation_stocks_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+<% end %>
