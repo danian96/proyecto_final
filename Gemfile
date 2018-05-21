@@ -24,6 +24,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'logstasher'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
