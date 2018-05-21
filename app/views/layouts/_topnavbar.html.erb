@@ -10,6 +10,10 @@
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
+          <li>
+              <%= link_to 'Cambiar Estilo',change_style_path, :method=> :post , class:"fa fa-cogs"%>
+              </a>
+          </li>
             <li>
                 <%= link_to "Log out", destroy_user_session_path, :method => :get, class:"fa fa-sign-out" %>
             </li>

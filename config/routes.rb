@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'ayuda/index'
   get 'logs/index'
 
+  get 'logs/index'
+  post "/home/change_style", :as => :change_style
   resources :favorites
   resources :assign_details
   resources :assignation_stocks
@@ -31,4 +33,5 @@ Rails.application.routes.draw do
 
   resources :stocks
   resources :stock_categories
+  get 'backup/index'
 end
