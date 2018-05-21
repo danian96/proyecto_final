@@ -1,0 +1,38 @@
+
+<%= form_with(model: designation, local: true, html: {class: "form-horizontal"}) do |form| %>
+  <% if designation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(designation.errors.count, "error") %> prohibited this designation from being saved:</h2>
+
+      <ul>
+      <% designation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, "Nombre :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :name, id: :designation_name, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :departament_i , "Estado civil :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.collection_select(:departament_id , Departament.all, :id, :name, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras',designations_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+  <% end %>

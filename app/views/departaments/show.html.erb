@@ -1,0 +1,20 @@
+<br>
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Perfil</h5>
+        </div>
+        <div class="ibox-content">
+          <p id="notice"><%= notice %></p>
+
+        <p>
+          <strong>Nombre:</strong>
+          <%= @departament.name %>
+        </p>
+
+
+      <%= link_to 'Editar', edit_departament_path(@departament), class:"btn btn-sm btn-white"%>
+      <%= link_to 'Atras', departaments_path , class:"btn btn-sm btn-white"%>
+    </div>
+  </div>
+</div>
