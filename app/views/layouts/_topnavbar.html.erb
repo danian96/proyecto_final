@@ -13,6 +13,12 @@
             <li>
                 <%= link_to "Log out", destroy_user_session_path, :method => :delete, class:"fa fa-sign-out" %>
             </li>
+            <li>
+              <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                  <i class="fa fa-question-circle"></i></span>
+              </a>
+
+            </li>
 
             <li class="dropdown">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -47,7 +53,10 @@
                           <%= link_to 'Mostrar Favoritos',favorites_path %>
                           <i class="fa fa-angle-right"></i>
                         </div>
-                    </li>
+                    </li
+
+
+
                 </ul>
             </li>
 
