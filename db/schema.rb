@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521174113) do
+ActiveRecord::Schema.define(version: 20180523044608) do
+
+  create_table "annunments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "status"
+    t.string "title"
+    t.string "descripcion"
+    t.bigint "departament_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["departament_id"], name: "index_annunments_on_departament_id"
+  end
 
   create_table "appli_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "state"
@@ -116,6 +126,15 @@ ActiveRecord::Schema.define(version: 20180521174113) do
     t.index ["user_id"], name: "index_people_on_user_id"
   end
 
+  create_table "psicologic_evaluations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "observations"
+    t.string "recomendations"
+    t.bigint "appli_detail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appli_detail_id"], name: "index_psicologic_evaluations_on_appli_detail_id"
+  end
+
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "resource_type"
@@ -141,6 +160,15 @@ ActiveRecord::Schema.define(version: 20180521174113) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["stock_category_id"], name: "index_stocks_on_stock_category_id"
+  end
+
+  create_table "tecnic_evaluations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "observations"
+    t.string "qualification"
+    t.bigint "appli_detail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appli_detail_id"], name: "index_tecnic_evaluations_on_appli_detail_id"
   end
 
   create_table "trainings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -188,6 +216,7 @@ ActiveRecord::Schema.define(version: 20180521174113) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "annunments", "departaments"
   add_foreign_key "appli_details", "convocatories"
   add_foreign_key "appli_details", "people"
   add_foreign_key "assign_details", "assignation_stocks"
@@ -200,7 +229,9 @@ ActiveRecord::Schema.define(version: 20180521174113) do
   add_foreign_key "memorandums", "users"
   add_foreign_key "people", "civil_states"
   add_foreign_key "people", "users"
+  add_foreign_key "psicologic_evaluations", "appli_details"
   add_foreign_key "stocks", "stock_categories"
+  add_foreign_key "tecnic_evaluations", "appli_details"
   add_foreign_key "user_trainings", "trainings"
   add_foreign_key "user_trainings", "users"
 end

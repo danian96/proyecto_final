@@ -1,0 +1,31 @@
+
+<br>
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <p id="notice"><%= notice %></p>
+        <div class="ibox-title">
+            <h5>Test psicologico</h5>
+        </div>
+        <div class="ibox-content">
+
+
+<p>
+  <strong>Observations:</strong>
+  <%= @psicologic_evaluation.observations %>
+</p>
+
+<p>
+  <strong>Recomendations:</strong>
+  <%= @psicologic_evaluation.recomendations %>
+</p>
+
+<p>
+  <strong>Appli detail:</strong>
+  <%= @psicologic_evaluation.appli_detail.state %>
+</p>
+
+<%= link_to 'EDITAR', edit_psicologic_evaluation_path(@psicologic_evaluation),  class:"btn btn-sm btn-white"%> |
+<%= link_to 'ATRAS', psicologic_evaluations_path,  class:"btn btn-sm btn-white" %>
+</div>
+</div>
+</div>
