@@ -47,7 +47,7 @@
                   <li><a href="graph_rickshaw.html">link</a></li>
               </ul>
             </li>
-            <li >
+
             <li >
                 <a href="#"><i class="fa fa-check-square"></i> <span class="nav-label">Roles Y Permisos</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -85,7 +85,13 @@
                 <li >
                     <a href="#"><i class="fa fa-ioxhost"></i> <span class="nav-label">Convocatirias</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
+                          <li><%= link_to 'Departamentos', departaments_path %></li>
+                          <li><%= link_to 'Designacion', designations_path %></li>
+                          <li><%= link_to 'Convocatoria', annunments_path %></li>
+                          <li><%= link_to 'Detalle de Aplicacion', appli_details_path %></li>
                           <li><%= link_to 'Convocatoria', convocatories_path %></li>
+                          <li><%= link_to 'Evaluacion Tecnica', tecnic_evaluations_path %></li>
+                          <li><%= link_to 'Evaluacion Psicologica', psicologic_evaluations_path %></li>
                     </ul>
                   </li>
 
