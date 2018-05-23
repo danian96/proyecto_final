@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180523102634) do
+ActiveRecord::Schema.define(version: 20180523190940) do
 
-  create_table "annunments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "annunments", force: :cascade do |t|
     t.string "status"
     t.string "title"
     t.string "descripcion"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["departament_id"], name: "index_annunments_on_departament_id"
   end
 
-  create_table "appli_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "appli_details", force: :cascade do |t|
     t.string "state"
     t.date "date"
     t.bigint "convocatory_id"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["person_id"], name: "index_appli_details_on_person_id"
   end
 
-  create_table "assign_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "assign_details", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "stock_id"
     t.bigint "assignation_stock_id"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["stock_id"], name: "index_assign_details_on_stock_id"
   end
 
-  create_table "assignation_stocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "assignation_stocks", force: :cascade do |t|
     t.date "assign_date"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -51,13 +54,13 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["user_id"], name: "index_assignation_stocks_on_user_id"
   end
 
-  create_table "civil_states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "civil_states", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "convocatories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "convocatories", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.date "stardate"
@@ -70,13 +73,13 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["designation_id"], name: "index_convocatories_on_designation_id"
   end
 
-  create_table "departaments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "departaments", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "designations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "designations", force: :cascade do |t|
     t.string "name"
     t.bigint "departament_id"
     t.datetime "created_at", null: false
@@ -84,7 +87,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["departament_id"], name: "index_designations_on_departament_id"
   end
 
-  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "favorites", force: :cascade do |t|
     t.string "name"
     t.string "acctionlink"
     t.bigint "user_id"
@@ -93,13 +96,13 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "memorandum_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "memorandum_types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "memorandums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "memorandums", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.bigint "memorandum_type_id"
@@ -110,7 +113,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["user_id"], name: "index_memorandums_on_user_id"
   end
 
-  create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "last_name"
     t.date "birthday"
@@ -126,7 +129,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["user_id"], name: "index_people_on_user_id"
   end
 
-  create_table "psicologic_evaluations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "psicologic_evaluations", force: :cascade do |t|
     t.string "observations"
     t.string "recomendations"
     t.bigint "appli_detail_id"
@@ -135,7 +138,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["appli_detail_id"], name: "index_psicologic_evaluations_on_appli_detail_id"
   end
 
-  create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
     t.bigint "resource_id"
@@ -146,13 +149,13 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
-  create_table "stock_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "stock_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "stocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "stocks", force: :cascade do |t|
     t.date "buying_date"
     t.string "item_name"
     t.integer "quantity"
@@ -162,7 +165,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["stock_category_id"], name: "index_stocks_on_stock_category_id"
   end
 
-  create_table "tecnic_evaluations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tecnic_evaluations", force: :cascade do |t|
     t.string "observations"
     t.string "qualification"
     t.bigint "appli_detail_id"
@@ -171,7 +174,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["appli_detail_id"], name: "index_tecnic_evaluations_on_appli_detail_id"
   end
 
-  create_table "trainings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "trainings", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.date "init_date"
@@ -180,7 +183,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_trainings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_trainings", force: :cascade do |t|
     t.string "state"
     t.bigint "training_id"
     t.bigint "user_id"
@@ -190,7 +193,7 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.index ["user_id"], name: "index_user_trainings_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -204,12 +207,12 @@ ActiveRecord::Schema.define(version: 20180523102634) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "style"
-    t.string "role"
+    t.string "role", default: "postulante"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "users_roles", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users_roles", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "role_id"
     t.index ["role_id"], name: "index_users_roles_on_role_id"
