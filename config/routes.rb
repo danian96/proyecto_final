@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   get 'logs/index'
 
   get 'logs/index'
+  get 'home/permissions'
   get 'backup/select_file'
   post "/home/change_style", :as => :change_style
   post "/backup/restore", :as => :backup_restore
+  post "/home/change_perm", :as => :home_change_perm
   resources :favorites
   resources :assign_details
   resources :assignation_stocks
