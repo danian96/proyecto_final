@@ -1,2 +1,159 @@
-<h1>DASHBOARD</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row wrapper border-bottom white-bg page-heading">
+            </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget style1">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <i class="fa fa-trophy fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <span> Capacitaciones que se asistio </span>
+                                <h2 class="font-bold"><%= UserTraining.where(user_id: current_user.id).count %></h2>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 navy-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-cloud fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> Clima hoy </span>
+                            <h2 class="font-bold">26'C</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 lazur-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-envelope-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> Cantidad de Activos Asignados </span>
+                            <h2 class="font-bold"><%= AssignationStock.where(user_id: current_user.id).count%></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 yellow-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-star fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                          <span> Cantidad de Favoritos </span>
+                          <h2 class="font-bold"><%= current_user.favorite.count%></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="row">
+              <div class="col-lg-4">
+                      <div class="widget-head-color-box navy-bg p-lg text-center">
+                          <div class="m-b-md">
+                          <h2 class="font-bold no-margins">
+                              <%= Person.where(user_id: current_user.id).name %>
+                          </h2>
+                              <small> <%= current_user.role %></small>
+                          </div>
+                          <img alt="image" class="img-circle" src="<%= image_url 'profile_small.jpg' %>"/>
+
+                      </div>
+                      <div class="widget-text-box">
+                          <h4 class="media-heading"><%= Person.where(user_id: current_user.id).name %></h4>
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                          <div class="text-right">
+                              <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                              <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+                          </div>
+                      </div>
+              </div>
+              <div class="col-lg-2">
+                  <div class="widget navy-bg p-lg text-center">
+                      <div class="m-b-md">
+                          <i class="fa fa-shield fa-4x"></i>
+                          <h1 class="m-xs">456</h1>
+                          <h3 class="font-bold no-margins">
+                              Dias
+                          </h3>
+                          <small>Asegurado</small>
+                      </div>
+                  </div>
+                  <div class="widget  p-lg text-center">
+                      <div class="m-b-md">
+                          <i class="fa fa-flash fa-4x"></i>
+                          <h1 class="m-xs">612</h1>
+                          <h3 class="font-bold no-margins">
+                              Dias
+                          </h3>
+                          <small>Trabajando</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="widget lazur-bg p-xl">
+
+                              <h2>
+                                  <%= Person.where(user_id: current_user.id).name %>
+                              </h2>
+                      <ul class="list-unstyled m-t-md">
+                          <li>
+                              <span class="fa fa-envelope m-r-xs"></span>
+                              <label>Email:</label>
+                              <%= current_user.email %>
+                          </li>
+                          <li>
+                              <span class="fa fa-home m-r-xs"></span>
+                              <label>Address:</label>
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                          </li>
+                          <li>
+                              <span class="fa fa-phone m-r-xs"></span>
+                              <label>Contact:</label>
+                              78503050
+                          </li>
+                      </ul>
+
+                  </div>
+                  <div class="widget red-bg p-lg text-center">
+                      <div class="m-b-md">
+                          <i class="fa fa-bell fa-4x"></i>
+                          <h1 class="m-xs">2</h1>
+                          <h3 class="font-bold no-margins">
+                              Memorandums
+                          </h3>
+                          <small>Alerta por llamadas de Atencion.</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-2">
+              <div class="widget yellow-bg p-lg text-center">
+                  <div class="m-b-md">
+                      <i class="fa fa-thumbs-up fa-4x"></i>
+                      <h1 class="m-xs">520</h1>
+                      <h3 class="font-bold no-margins">
+                          Likes
+                      </h3>
+                      <small>amount</small>
+                  </div>
+              </div>
+                  <div class="widget yellow-bg p-lg text-center">
+                      <div class="m-b-md">
+                          <i class="fa fa-warning fa-4x"></i>
+                          <h1 class="m-xs">Alarm</h1>
+                          <h3 class="font-bold no-margins">
+                              Do
+                          </h3>
+                          <small>something</small>
+                      </div>
+                  </div>
+                  </div>
+          </div>
