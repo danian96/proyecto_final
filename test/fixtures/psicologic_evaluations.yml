@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  observations: MyString
+  recomendations: MyString
+  appli_detail: one
+
+two:
+  observations: MyString
+  recomendations: MyString
+  appli_detail: two

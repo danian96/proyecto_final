@@ -1,46 +1,39 @@
 
-
 <br>
 <div class="col-lg-12">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5> Convocatorias</h5>
+            <h5> Anuncios</h5>
             <div class="ibox-content">
               <div class="table-responsive">
                   <p id="notice"><%= notice %></p>
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                         <thead>
                         <tr>
+                          <th>Status</th>
                           <th>Title</th>
-                          <th>Description</th>
-                          <th>Stardate</th>
-                          <th>Enddate</th>
-                          <th>Vacancy</th>
-                          <th>State</th>
-                          <th>Designation</th>
-                          <th colspan="1">Action</th>
+                          <th>Descripcion</th>
+                          <th>Departament</th>
+                          <th colspan="1"></th>
                         </tr>
                       </thead>
 
                       <tbody>
-                        <% @convocatories.each do |convocatory| %>
+                        <% @annunments.each do |annunment| %>
                           <tr>
-                            <td><%= convocatory.title %></td>
-                            <td><%= convocatory.description %></td>
-                            <td><%= convocatory.stardate %></td>
-                            <td><%= convocatory.enddate %></td>
-                            <td><%= convocatory.vacancy %></td>
-                            <td><%= convocatory.state %></td>
-                            <td><%= convocatory.designation.name %></td>
-                            <td><%= link_to '<i class="fa fa-eye text-info"></i>'.html_safe, convocatory %>
-                                <%= link_to '<i class="fa fa-edit text-navy"></i>'.html_safe, edit_convocatory_path(convocatory)  %>
-                                <%= link_to '<i class="fa fa-trash text-danger"></i>'.html_safe, convocatory,method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            <td><%= annunment.status %></td>
+                            <td><%= annunment.title %></td>
+                            <td><%= annunment.descripcion %></td>
+                            <td><%= annunment.departament.name %></td>
+                            <td><%= link_to '<i class="fa fa-eye text-info"></i>'.html_safe, annunment %>
+                                <%= link_to '<i class="fa fa-edit text-navy"></i>'.html_safe, edit_annunment_path(annunment)  %>
+                                <%= link_to '<i class="fa fa-trash text-danger"></i>'.html_safe, annunment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                           </tr>
                         <% end %>
                     </tbody>
                   </table>
               </div>
-        <%= link_to 'Nuevo Stock',  new_convocatory_path, class:"btn btn-sm btn-white btn-block" %>
+        <%= link_to 'Nuevo Stock',  new_annunment_path, class:"btn btn-sm btn-white btn-block" %>
       </div>
     </div>
   </div>

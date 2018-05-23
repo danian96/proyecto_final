@@ -13,42 +13,42 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :title, "TITULO :",class: "col-lg-2 control-label"%>
+    <%= form.label :title, "Titulo :",class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
       <%= form.text_field :title, id: :convocatory_title, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= form.label :description, "DESCRIPCION :",class: "col-lg-2 control-label"%>
+    <%= form.label :description, "Descripcion :",class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
       <%= form.text_field :description, id: :convocatory_description, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= form.label :stardate, "DATO INICIO :",class: "col-lg-2 control-label"%>
+    <%= form.label :stardate, "Dato inicio :",class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
       <%= form.date_select :stardate, id: :convocatory_stardate, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= form.label :enddate, "DATO FINAL :",class: "col-lg-2 control-label"%>
+    <%= form.label :enddate, "Dato final :",class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
       <%= form.date_select :enddate, id: :convocatory_enddate, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= form.label :vacancy, "VACANCIA :",class: "col-lg-2 control-label"%>
+    <%= form.label :vacancy, "Vacancia :",class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
       <%= form.number_field :vacancy, id: :convocatory_vacancy, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= form.label :state, "ESTADO :",class: "col-lg-2 control-label"%>
+    <%= form.label :state, "Estado :",class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
       <%= form.text_field :state, id: :convocatory_state, class: "form-control"%>
     </div>
@@ -56,7 +56,7 @@
 
 
   <div class="form-group">
-    <%= form.label :designation_id , "Convocatoria :" ,class: "col-lg-2 control-label"%>
+    <%= form.label :designation_id , "Designacion :" ,class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
         <%= form.collection_select(:designation_id, Designation.all, :id, :name, {hide_label: true}, class: "form-control") %>
     </div>
