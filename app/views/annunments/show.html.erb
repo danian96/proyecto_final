@@ -1,0 +1,37 @@
+
+<br>
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <p id="notice"><%= notice %></p>
+        <div class="ibox-title">
+            <h5>Anuncio</h5>
+        </div>
+        <div class="ibox-content">
+
+<p>
+  <strong>Status:</strong>
+  <%= @annunment.status %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @annunment.title %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @annunment.descripcion %>
+</p>
+
+<p>
+  <strong>Departament:</strong>
+  <%= @annunment.departament.name%>
+</p>
+
+
+<%= link_to 'EDITAR', edit_annunment_path(@annunment), class:"btn btn-sm btn-white" %>
+
+<%= link_to 'ATRAS', annunments_path , class:"btn btn-sm btn-white"%>
+</div>
+</div>
+</div>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :psicologic_evaluations
+  resources :tecnic_evaluations
+  resources :annunments
   resources :appli_details
   resources :convocatories
   resources :designations

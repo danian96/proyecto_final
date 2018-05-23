@@ -1,0 +1,48 @@
+<%= form_with(model: psicologic_evaluation, local: true, html: {class: "form-horizontal"}) do |form| %>
+
+  <% if psicologic_evaluation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(psicologic_evaluation.errors.count, "error") %> prohibited this psicologic_evaluation from being saved:</h2>
+
+      <ul>
+      <% psicologic_evaluation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= form.label :observations, "Observaciones :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :observations, id: :psicologic_evaluation_observations, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :recomendations, "Recomendaciones :",class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+      <%= form.text_field :recomendations, id: :psicologic_evaluation_recomendations, class: "form-control"%>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :appli_detail_id , "Detalle postulacion :" ,class: "col-lg-2 control-label"%>
+    <div class="col-lg-10">
+        <%= form.collection_select(:appli_detail_id, AppliDetail.all, :id, :state, {hide_label: true}, class: "form-control") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="actions">
+        <%= form.submit "Guardar", class:"btn btn-sm btn-white" %>
+        <%= link_to 'Atras', psicologic_evaluations_path , class:"btn btn-sm btn-white"%>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>

@@ -1,0 +1,2 @@
+module AnnunmentsHelper
+end
