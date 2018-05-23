@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'logs/index'
 
   get 'logs/index'
+  get 'backup/select_file'
   post "/home/change_style", :as => :change_style
+  post "/backup/restore", :as => :backup_restore
   resources :favorites
   resources :assign_details
   resources :assignation_stocks
@@ -38,4 +40,6 @@ Rails.application.routes.draw do
   resources :stocks
   resources :stock_categories
   post 'backup/index', :as => :backup_index
+#Calling a controller method from a button in rails
+  post 'logs/download', as: :log_download
 end
