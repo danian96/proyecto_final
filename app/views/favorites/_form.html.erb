@@ -17,17 +17,24 @@
       <%= form.text_field :name, id: :favorite_name, class: "form-control"%>
     </div>
   </div>
+
   <div class="form-group">
-    <%= form.label :acctionlink, "Accion link :",class: "col-lg-2 control-label"%>
+    <%= form.label :acctionlink , "Link :",class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
-      <%= form.text_field :acctionlink, id: :favorite_acctionlink, class: "form-control"%>
+      <%= form.select(:acctionlink, [['Favoritos', 'favorites_path'],
+        ['Convocatorias', 'convocatories_path'],
+        ['Capacitaciones', 'trainings_path'],
+        ['Tipos de memorandum', 'memorandum_types_path'],
+        ['Memorandum', 'memorandums_path']],
+        {include_blank: "Selecciona.."}, {:class=>"form-control"})%>
     </div>
   </div>
 
+
   <div class="form-group">
-    <%= form.label :user_id, "User :",class: "col-lg-2 control-label"%>
+    <%= form.label :user_id , "User  :" ,class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
-      <%= form.text_field :user_id, id: :favorite_user_id, class: "form-control"%>
+      <%= form.collection_select(:user_id, User.all, :id, :email, {hide_label: true}, class: "form-control") %>
     </div>
   </div>
 
