@@ -3,13 +3,16 @@
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Logs del Sistema / Bitacora</h5>
+
           </div>
             <div class="ibox-content">
 
   <%= link_to 'Start', 'javascript:void("start")', :id => :start, :style => 'display:none' %>
   <pre id='logs'>
+    <%= link_to '',log_download_path, :method=> :post , class:"fa fa-cloud-download btn btn-info  dim btn-large-dim btn-outline pull-right"%>
     <%= @lines.join("\n") %>
   </pre>
+
 </div>
 </div>
 </div>
